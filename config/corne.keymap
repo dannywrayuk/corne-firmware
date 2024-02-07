@@ -12,30 +12,39 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        Base {
             bindings = <
-&trans  &kp Q  &kp W  &kp E                 &kp R                    &kp T          &kp Y        &kp U                 &kp I                   &kp O    &kp P         &trans
-&trans  &kp A  &kp S  &kp D                 &kp F                    &kp G          &kp H        &kp J                 &kp K                   &kp L    &kp SEMI      &trans
-&trans  &kp Z  &kp X  &kp C                 &kp V                    &kp B          &kp N        &kp M                 &kp COMMA               &kp DOT  &kp QUESTION  &trans
-                      &mt LEFT_COMMAND TAB  &mt LEFT_CONTROL ESCAPE  &lt 1 SPACE    &lt 2 SPACE  &mt LEFT_SHIFT ENTER  &mt LEFT_ALT BACKSPACE
+&kp LC(UP)      &kp Q  &kp W  &kp E         &kp R                    &kp T          &kp Y        &kp U                  &kp I               &kp O    &kp P         &kp LG(SPACE)
+&kp LEFT_ALT    &kp A  &kp S  &kp D         &kp F                    &kp G          &kp H        &kp J                  &kp K               &kp L    &kp SEMI      &kp RIGHT_ALT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V                    &kp B          &kp N        &kp M                  &kp COMMA           &kp DOT  &kp QUESTION  &kp RIGHT_SHIFT
+                              &mt LCMD TAB  &mt LEFT_CONTROL ESCAPE  &lt 1 SPACE    &lt 2 SPACE  &mt RIGHT_CONTROL ESC  &mt RCMD BACKSPACE
             >;
         };
 
-        layer_1 {
+        Lower {
             bindings = <
-&trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LESS_THAN    &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp SLASH  &trans
-&trans  &trans         &kp PLUS          &kp EQUAL       &kp DOUBLE_QUOTES     &trans           &kp LEFT          &kp DOWN               &kp UP           &kp RIGHT          &trans     &trans
-&trans  &trans         &kp MINUS         &kp UNDERSCORE  &kp SQT               &trans           &trans            &kp GRAVE              &kp TILDE        &kp PIPE           &trans     &trans
-                                         &trans          &trans                &trans           &kp ENTER         &trans                 &trans
+&mo 3   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5    &kp N6     &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &trans    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans      &trans      &trans      &trans      &trans    &trans     &trans    &trans  &trans     &trans  &trans
+                                &trans      &trans      &trans    &kp ENTER  &trans    &trans
             >;
         };
 
-        layer_2 {
+        Upper {
             bindings = <
-&kp F11     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F12
-&trans      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5           &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
-&bt BT_NXT  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans   &trans
-                            &trans  &trans  &kp BACKSPACE    &trans  &trans  &trans
+&mo 3   &kp EXCL       &kp AT            &kp HASH        &kp DLLR              &kp PERCENT          &kp CARET         &kp AMPS               &kp ASTERISK     &trans             &trans     &trans
+&trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LESS_THAN        &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp SLASH  &trans
+&trans  &kp PLUS       &kp MINUS         &kp EQUAL       &kp UNDERSCORE        &kp DOUBLE_QUOTES    &kp SQT           &kp GRAVE              &kp TILDE        &kp PIPE           &trans     &trans
+                                         &trans          &trans                &kp BACKSPACE        &trans            &trans                 &trans
+            >;
+        };
+
+        Mod {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
