@@ -9,14 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        test {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <38 39>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -26,25 +19,34 @@
 &kp LC(UP)      &kp Q  &kp W  &kp E         &kp R                    &kp T          &kp Y        &kp U                  &kp I               &kp O    &kp P         &kp LG(SPACE)
 &kp LEFT_ALT    &kp A  &kp S  &kp D         &kp F                    &kp G          &kp H        &kp J                  &kp K               &kp L    &kp SEMI      &kp RIGHT_ALT
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V                    &kp B          &kp N        &kp M                  &kp COMMA           &kp DOT  &kp QUESTION  &kp RIGHT_SHIFT
-                              &mt LCMD TAB  &mt LEFT_CONTROL ESCAPE  &lt 1 SPACE    &lt 2 SPACE  &mt RIGHT_CONTROL ESC  &mt RCMD BACKSPACE
+                              &mt LCMD TAB  &mt LEFT_CONTROL ESCAPE  &lt 2 SPACE    &lt 3 SPACE  &mt RIGHT_CONTROL ESC  &mt RCMD BACKSPACE
+            >;
+        };
+
+        Caps {
+            bindings = <
+&trans      &kp LS(Q)  &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)    &kp LS(Y)  &kp LS(U)  &kp LS(I)   &kp LS(O)   &kp LS(P)      &trans
+&trans      &kp LS(A)  &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)    &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)   &kp LS(COLON)  &trans
+&caps_word  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)    &kp LS(N)  &kp LS(M)  &kp LS(LT)  &kp LS(GT)  &kp LS(QMARK)  &caps_word
+                                  &trans     &trans     &trans       &trans     &trans     &trans
             >;
         };
 
         Lower {
             bindings = <
-&mo 3   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5    &kp N6     &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &trans    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans      &trans      &trans      &trans      &trans    &trans     &trans    &trans  &trans     &trans  &trans
-                                &trans      &trans      &trans    &kp ENTER  &trans    &trans
+&mo 4   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5    &kp N6       &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &trans    &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans      &trans      &trans      &trans      &trans    &trans       &trans    &trans  &trans     &trans  &trans
+                                &trans      &trans      &trans    &lt 1 ENTER  &trans    &trans
             >;
         };
 
         Upper {
             bindings = <
-&mo 3   &kp EXCL       &kp AT            &kp HASH        &kp DLLR              &kp PERCENT          &kp CARET         &kp AMPS               &kp ASTERISK     &trans             &trans     &trans
+&mo 4   &kp EXCL       &kp AT            &kp HASH        &kp DLLR              &kp PERCENT          &kp CARET         &kp AMPS               &kp ASTERISK     &trans             &trans     &trans
 &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LESS_THAN        &kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp SLASH  &trans
 &trans  &kp PLUS       &kp MINUS         &kp EQUAL       &kp UNDERSCORE        &kp DOUBLE_QUOTES    &kp SQT           &kp GRAVE              &kp TILDE        &kp PIPE           &trans     &trans
-                                         &trans          &trans                &kp BACKSPACE        &trans            &trans                 &trans
+                                         &trans          &trans                &lt 1 BACKSPACE      &trans            &trans                 &trans
             >;
         };
 
